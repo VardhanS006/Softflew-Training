@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form</title>
+		<!--
+		label tag = Heading of IP area
+		ip type = text,email,password,data,datetime-local,range,color,radio,checkbox
+		ip name = key to input value in array
+		ip max / min
+		ip value = default entered ip value
+		ip placeholder = text to show at ip area b4 inputting
+		ip required = define mandatory fields
+		ip readonly = non-editable ip value
+		textarea = to allow users to type or input a para
+				textarea cols ip area width
+				textarea rows ip area length
+
+				Methods - GET(default): less secure
+				POST: more secure
+
+	-->
+</head>
+<body>
+	<form>
+		<label>Eneter Your Name</label>
+		<input type="text" name="name" value="Softflew" maxlength="10" placeholder="Enter Your name"><br>
+		<input type="number" name="number"><br>
+		<input type="email" value="admin@gmail.com" name="email" required readonly><br>
+		<input type="password" name="pass">
+		<input type="radio" value="male" name="Gender">M
+		<input type="radio" value="female" name="Gender">F
+		<input type="date" max="2023-07-09" name="date" required><br>
+		<input type="datetime-local" name="" required><br>
+		<textarea cols="30" rows="5">
+			please fill data
+		</textarea>
+		<input type="Submit" name="Submit" value="Submit"><br>
+		<label>Choose city</label>
+		<select name="city" >
+			<option>Agra</option>
+			<option>Lucknow</option>
+			<option>Hardoi</option>			
+		</select>
+	</form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add rows in table</title>
+    <style type="text/css">
+        table{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <table border="2px" cellpadding="5px" cellspacing="0px" id="table">
+            <button onclick="addrow()">Add Row</button>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Roll No</th>
+            <th>Action</th>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        var count = 0;
+        let names = ["Tony","Steve","Thor","Bruce","Barton","Natalia","Wanda","Vision"];
+        let classes = [1,2,3,4,5,6,7,8];
+        let rolls = [111,222,333,444,555,666,777,888];
+        function addrow(){
+            if(count==8){
+                alert("Limit Reached");
+                return false;
+            }
+            document.getElementById("table").innerHTML += '<tr id="tb1_'+count+'"><th>'+(count+1)+'</th><th>'+names[count]+'</th><th>'+classes[count]+'</th><th>'+rolls[count]+'</th><th><button onclick=(removerw('+count+'))>Remove</button></th></tr>';//+00array[index]+
+            count++;
+        }
+        function removerw(id) {
+            document.getElementById('tb1_'+id).remove();
+        }
+    </script>
+</body>
+</html>

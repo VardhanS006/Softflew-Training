@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Write name of element present in array where we aren't aware about index of the element.
+
+let data = ["Banana", "Orange", "Apple", "Mango","orange","grapes"];
+var fruit=data.find(function(element){//call back function-->function k parameter k andar function
+	return element=="Mango";
+})
+console.log(fruit);
+</script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ludo</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<style type="text/css">
+		p{
+			font-size: 25px;
+		}
+		.div{
+			position: absolute;
+			height: 800px;
+			width: 800px;
+			border: 2px solid black;
+				}
+		.div2{
+			position: absolute;
+			left:0px ;
+			top:0px;
+			height: 300px;
+			width: 300px;
+			background-color: blue;
+			border:2px solid black;
+
+		}
+		.div3{
+			position: absolute;
+			right:0px ;
+			top:0px;
+			height: 300px;
+			width: 300px;
+			background-color: red;
+			border:2px solid black;
+		}
+		.div4{
+			position: absolute;
+			left:0px ;
+			bottom:0px;
+			height: 300px;
+			width: 300px;
+			background-color: yellow;
+			border:2px solid black;
+		}
+		.div5{
+			position: absolute;
+			right:0px ;
+			bottom:0px;
+			height: 300px;
+			width: 300px;
+			background-color: green;
+			border:2px solid black;
+		}
+		
+		.div6{
+			position: absolute;
+			left: 30px;
+			top: 30px;
+			height: 50px;
+			width: 50px;
+			border: 2px solid black;
+		}
+		.div7{
+			position: absolute;
+			left: 30px;
+			bottom: 30px;
+			height: 50px;
+			width: 50px;
+			border: 2px solid black;
+		}
+		.div8{
+			position: absolute;
+			right: 30px;
+			top: 30px;
+			height: 50px;
+			width: 50px;
+			border: 2px solid black;
+		}
+		.div9{
+			position: absolute;
+			right: 30px;
+			bottom: 30px;
+			height: 50px;
+			width: 50px;
+			border: 2px solid black;
+		}
+		.white{
+			position: absolute;
+			left:50px ;
+			top:50px;
+			height: 200px;
+			width: 200px;
+			background-color: white;
+			border:2px solid black;
+		}
+		.mid{
+			left: 300px;
+			top:300px;
+			position: absolute;
+			height:0px;
+			width: 0px;
+			border-style: solid;
+			border-color:red green yellow blue;
+			border-width:100px;
+		}
+		.sw{
+			position: absolute;
+			height: 50px;
+			width: 66px;
+			border: 2px solid black;
+		}
+		.sw2{
+			position: absolute;
+			height: 50px;
+			width: 65px;
+			border: 2px solid black;
+		}
+		.sw3{
+			position: absolute;
+			height: 50px;
+			width: 64px;
+			border: 2px solid black;
+		}
+		.sww{
+			position: absolute;
+			height: 66px;
+			width: 50px;
+			border: 2px solid black;
+		}
+		.sww2{
+			position: absolute;
+			height: 65px;
+			width: 50px;
+			border: 2px solid black;
+		}
+		.sww3{
+			position: absolute;
+			height: 65px;
+			width: 50px;
+			border: 2px solid black;
+		}		
+	</style>
+</head>
+<body>
+	<div class="div">
+		
+		<div class="div2">
+			<div class="white">
+				<div class="div6" style="background-color: blue;"></div>
+				<div class="div7" style="background-color: blue;"></div>
+				<div class="div8" style="background-color: blue;"></div>
+				<div class="div9" style="background-color: blue;"></div>
+			</div>	
+		</div>
+		<div class="div3">
+			<div class="white">
+				<div class="div6" style="background-color: red;"></div>
+				<div class="div7" style="background-color: red;"></div>
+				<div class="div8" style="background-color: red;"></div>
+				<div class="div9" style="background-color: red;"></div>
+			</div>
+		</div>
+		<div class="div4">
+			<div class="white">
+				<div class="div6" style="background-color: yellow;"></div>
+				<div class="div7" style="background-color: yellow;"></div>
+				<div class="div8" style="background-color: yellow;"></div>
+				<div class="div9" style="background-color: yellow;"></div>
+			</div>
+		</div>
+		<div class="div5">
+			<div class="white">
+				<div class="div6" style="background-color: green;"></div>
+				<div class="div7" style="background-color: green;"></div>
+				<div class="div8" style="background-color: green;"></div>
+				<div class="div9" style="background-color: green;"></div>
+			</div>
+		</div>
+		<div class="mid"></div>
+		<div class="sw" style="top:0px; left:300px"></div>
+		<div class="sw2" style="top:0px; left:366px"><center><p class="fa fa-arrow-down"></p></center></div>
+		<div class="sw3" style="top:0px; left:432px"></div>
+
+		<div class="sw" style="top:50px; left:300px"></div>
+		<div class="sw2" style="top:50px; left:366px; background-color:red"></div>
+		<div class="sw3" style="top:50px; left:432px; background-color:red"></div>
+
+		<div class="sw" style="top:100px; left:300px"></div>
+		<div class="sw2" style="top:100px; left:366px; background-color:red"></div>
+		<div class="sw3" style="top:100px; left:432px"></div>
+
+		<div class="sw" style="top:150px; left:300px"></div>
+		<div class="sw2" style="top:150px; left:366px; background-color:red"></div>
+		<div class="sw3" style="top:150px; left:432px"></div>
+
+		<div class="sw" style="top:200px; left:300px"></div>
+		<div class="sw2" style="top:200px; left:366px; background-color:red"></div>
+		<div class="sw3" style="top:200px; left:432px"></div>
+
+		<div class="sw" style="top:250px; left:300px"></div>
+		<div class="sw2" style="top:250px; left:366px; background-color:red"></div>
+		<div class="sw3" style="top:250px; left:432px"></div>
+
+		<div class="sww" style="top:300px; left:0px"></div>
+		<div class="sww2" style="top:366px; left:0px"><center><p class="fa fa-arrow-right"></p></center></div>
+		<div class="sww3" style="top:431px; left:0px"></div>
+
+		<div class="sww" style="top:300px; left:50px;background-color:blue"></div>
+		<div class="sww2" style="top:366px; left:50px;background-color:blue"></div>
+		<div class="sww3" style="top:431px; left:50px"></div>
+
+		<div class="sww" style="top:300px; left:100px"></div>
+		<div class="sww2" style="top:366px; left:100px;background-color:blue"></div>
+		<div class="sww3" style="top:431px; left:100px"></div>
+
+		<div class="sww" style="top:300px; left:150px"></div>
+		<div class="sww2" style="top:366px; left:150px;background-color:blue"></div>
+		<div class="sww3" style="top:431px; left:150px"></div>
+
+		<div class="sww" style="top:300px; left:200px"></div>
+		<div class="sww2" style="top:366px; left:200px;background-color:blue"></div>
+		<div class="sww3" style="top:431px; left:200px"></div>
+
+		<div class="sww" style="top:300px; left:250px"></div>
+		<div class="sww2" style="top:366px; left:250px;background-color:blue"></div>
+		<div class="sww3" style="top:431px; left:250px"></div>
+
+		<div class="sw" style="bottom:0px; left:300px"></div>
+		<div class="sw2" style="bottom:0px; left:366px"><center><p class="fa fa-arrow-up"></p></center></div>
+		<div class="sw3" style="bottom:0px; left:432px"></div>
+
+		<div class="sw" style="bottom:50px; left:300px ;background-color:yellow"></div>
+		<div class="sw2" style="bottom:50px; left:366px; background-color:yellow"></div>
+		<div class="sw3" style="bottom:50px; left:432px;"></div>
+
+		<div class="sw" style="bottom:100px; left:300px"></div>
+		<div class="sw2" style="bottom:100px; left:366px; background-color:yellow"></div>
+		<div class="sw3" style="bottom:100px; left:432px"></div>
+
+		<div class="sw" style="bottom:150px; left:300px"></div>
+		<div class="sw2" style="bottom:150px; left:366px; background-color:yellow"></div>
+		<div class="sw3" style="bottom:150px; left:432px"></div>
+
+		<div class="sw" style="bottom:200px; left:300px"></div>
+		<div class="sw2" style="bottom:200px; left:366px; background-color:yellow"></div>
+		<div class="sw3" style="bottom:200px; left:432px"></div>
+
+		<div class="sw" style="bottom:250px; left:300px"></div>
+		<div class="sw2" style="bottom:250px; left:366px; background-color:yellow"></div>
+		<div class="sw3" style="bottom:250px; left:432px"></div>
+
+		<div class="sww" style="top:300px; right:0px"></div>
+		<div class="sww2" style="top:366px; right:0px"><center><p class="fa fa-arrow-left"></p></center></div>
+		<div class="sww3" style="top:431px; right:0px"></div>
+
+		<div class="sww" style="top:300px; right:50px"></div>
+		<div class="sww2" style="top:366px; right:50px;background-color:green"></div>
+		<div class="sww3" style="top:431px; right:50px;background-color:green"></div>
+
+		<div class="sww" style="top:300px; right:100px"></div>
+		<div class="sww2" style="top:366px; right:100px;background-color:green"></div>
+		<div class="sww3" style="top:431px; right:100px"></div>
+
+		<div class="sww" style="top:300px; right:150px"></div>
+		<div class="sww2" style="top:366px; right:150px;background-color:green"></div>
+		<div class="sww3" style="top:431px; right:150px"></div>
+
+		<div class="sww" style="top:300px; right:200px"></div>
+		<div class="sww2" style="top:366px; right:200px;background-color:green"></div>
+		<div class="sww3" style="top:431px; right:200px"></div>
+
+		<div class="sww" style="top:300px; right:250px"></div>
+		<div class="sww2" style="top:366px; right:250px;background-color:green"></div>
+		<div class="sww3" style="top:431px; right:250px"></div>
+	</div>
+</body>
+</html>

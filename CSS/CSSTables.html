@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Css Icons</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			counter-reset: section;
+		}
+		.header::before{
+			counter-increment: section;
+			content: ""counter(section);
+		}
+		table{
+			width: 100%;
+			text-align: center;
+		}
+
+		th{
+			background-color: red;
+			color: white;
+			font-family: cursive;
+		}
+		tr:nth-child(even){
+			background-color: darkorchid;
+			color: orange;
+		}
+		tr:hover{
+			background-color: black;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<table border="1px" cellpadding="10px" cellspacing="0">
+		<tr>
+			<th>S.No</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Address</th>
+		</tr>
+		<tr>
+			<td class="header"></td>
+			<td>Softflew</td>
+			<td>contact@softview.com</td>
+			<td>9956326561</td>
+			<td>Lucknow</td>
+		</tr>
+		<tr>
+			<td class="header"></td>
+			<td>Softflew</td>
+			<td>contact@softview.com</td>
+			<td>9956326561</td>
+			<td>Lucknow</td>
+		</tr>
+		<tr>
+			<td class="header"></td>
+			<td>Softflew</td>
+			<td>contact@softview.com</td>
+			<td>9956326561</td>
+			<td>Lucknow</td>
+		</tr>
+		<tr>
+			<td class="header"></td>
+			<td>Softflew</td>
+			<td>contact@softview.com</td>
+			<td>9956326561</td>
+			<td>Lucknow</td>
+		</tr>
+		<tr>
+			<td class="header"></td>
+			<td>Softflew</td>
+			<td>contact@softview.com</td>
+			<td>9956326561</td>
+			<td>Lucknow</td>
+		</tr>
+		<tr>
+			<td class="header"></td>
+			<td>Softflew</td>
+			<td>contact@softview.com</td>
+			<td>9956326561</td>
+			<td>Lucknow</td>
+		</tr>
+	</table>
+</body>
+</html>

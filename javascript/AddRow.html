@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add Row</title>
+	<style type="text/css">
+		table{
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<table border="2px" cellpadding="5px" cellspacing="0px" id="table">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Class</th>
+			<th>Roll Number</th>
+			<th>Action</th>
+		</tr>
+		<tbody id="body_data">
+		</tbody>
+		<button onclick="Myfunction()">Add New Row</button>
+	</table>
+	<script type="text/javascript">
+		var count=1;
+		function Myfunction(){
+			document.getElementById("body_data").innerHTML+='<tr id="tb1_'+count+'"><td>'+count+'</td><td>ABC</td><td>12</td><td>134</td><td><button onclick="removeRow('+count+')">Remove</button></td></tr>';
+			count++;
+		}
+		function removeRow(id){
+				document.getElementById('tb1_'+id).remove();
+		}
+	</script>
+</body>
+</html>

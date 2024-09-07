@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>First pro</title>
+
+
+</head>
+<body>
+	<img src="C:/Users/uvsin/OneDrive/Desktop/ll.jpg" id=image height="400px" width="600px">
+	<button onclick="Myfunction()">Change Image</button>
+<script type="text/javascript">
+	function Myfunction(){
+		var tag=document.getElementById('image');
+		var pic=(tag.src.substr(tag.src.lastIndexOf('/')+1));//for getting name of image in alert section
+			if(pic=="ll.jpg"){
+				tag.src="C:/Users/uvsin/OneDrive/Desktop/sam2.jpeg" ;
+				tag.style.height="400px";
+				tag.style.width="600px";
+				}
+			else{
+				tag.src="C:/Users/uvsin/OneDrive/Desktop/ll.jpg";
+			}
+			}
+</script>
+</body>
+</html>

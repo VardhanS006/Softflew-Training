@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <button class="btn btn-success " id="x">Add row(Append)</button>
+    <button class="btn btn-success " id="y">Add row(Prepend)</button>
+    <table border="2px" cellpadding="3px" cellspacing="0px" style="width:100%">
+      <tr>
+        <th>Name</th>
+        <th>class</th>
+        <th>roll no</th>
+        <th>subject</th>
+        <th>marks</th>
+        <th>Action</th>
+      </tr>
+      <tbody id="body_data">
+        <tr>
+          <td>XYZ</td>
+          <td>1</td>
+          <td>12</td>
+          <td>hin</td>
+          <td>99</td>
+        </tr>
+      </tbody>
+    </table>
+   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var id=1;
+      $(document).ready(function(){
+  $('#x').click(function(){//cal back function
+    $('#body_data').append('<tr id="row_'+id+'"><td class="name">Softflew</td><td class="course">PHP</td><td class="roll">123</td><td class="sub">math</td><td class="mark">100</td><td><button class="btn btn-danger" onclick="RemoveRow('+id+')">Remove</button></td><td><button class="btn btn-info" onclick="edit('+id+')">Edit</button></td></tr>');
+    id++;
+//console.log($('body_data').closest('tr').find('.name').text());
+  });
+   $('#y').click(function(){
+    $('#body_data').prepend('<tr id="row_'+id+'"><td class="name">Softflew</td><td class="course">PHP</td><td class="roll">123</td><td class="sub">math</td><td class="mark">100</td><td><button class="btn btn-outline-danger" onclick="RemoveRow('+id+')">Remove</button></td><td><button class="btn btn-info" onclick="edit('+id+')">Edit</button></td></tr>');
+    id++;
+  });
+   });
+function RemoveRow(id){
+        $('#row_'+id).remove();
+    }
+function edit(id){
+  var nam=$('#row_'+id).closest('tr').find('.name').text();
+  var cou=$('#row_'+id).closest('tr').find('.course').text();
+  var rol=$('#row_'+id).closest('tr').find('.roll').text();
+  var su=$('#row_'+id).closest('tr').find('.sub').text();
+  var mar=$('#row_'+id).closest('tr').find('.mark').text();
+  $('#row_'+id).empty();
+  $('#row_'+id).html('<td><input type="text" value='+nam+'></td><td><input type="text" value='+cou+'></td><td><input type="number" value='+rol+'></td><td><input type="text" value='+su+'></td><td><input type="number" value='+mar+'></td><td><button class="btn btn-outline-danger" onclick="RemoveRow('+id+')">Remove</button></td><td><button class="btn btn-warning" onclick="edit('+id+')">Edit</button></td>');
+} 
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>

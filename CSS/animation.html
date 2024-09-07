@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Animation</title>
+	<style type="text/css">
+		div{
+			height: 100px;
+			width: 100px;
+			border-style: solid;
+			border-color: red;
+			border-width: 2px;
+			animation-name: animate_div;
+			animation-duration: 6s;
+			animation-iteration-count: infinite;
+			position: absolute;
+		}
+		@keyframes animate_div{
+			/*from{
+				background-color:red;
+			}
+			to{
+				background-color: yellow;
+			}*/
+			0%{
+				left: 0px;
+				top: 0px;
+				background-color: red;
+			}
+			25%{
+				left: 400px;
+				top: 0px;
+				background-color: yellow;
+			}
+			50%{
+				left: 400px;
+				top: 400px;
+				background-color: pink;
+			}
+			75%{
+				left:0px ;
+				top: 400px;
+				background-color: greenyellow;
+			}
+			100%{
+				left: 0px;
+				top: 0px;
+				background-color: gray;
+			}
+			
+
+		}
+	</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

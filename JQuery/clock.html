@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style type="text/css">
+    	body{
+    		background-color: black;
+    	}
+    	.clock{
+    		position: absolute;
+    		color:yellow;
+    		top: 50%;
+    		left: 50%;
+    		font-size:100px;
+    		font-family: sans-serif;
+    		transform: translateX(-50%) translateY(-50%);
+    	}
+    </style>
+  </head>
+  <body>
+   <div id="MyClockDisplay" class="clock" onload="time(this)"></div>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    function time(){
+    	var date = new Date();
+    	var h = date.getHours();
+    	var m = date.getMinutes();
+    	var s = date.getSeconds();
+    	var session = "AM";
+    	if(h==12)
+    	{
+    		session="PM";
+    	}
+    	if(h==0)
+    	{
+    		h=12;
+    	}
+    	if(h>12)
+    	{
+    		h=h-12;
+    		session="PM";
+    	}
+    	h = (h<10)?"0" + h:h;
+    	m = (m<10)?"0" + m:m;
+    	s = (s<10)?"0" + s:s;
+    	var ctime = h + ":" + m +":" + s + " "+ session;
+    	document.getElementById('MyClockDisplay').innerHTML = ctime;
+    	document.getElementById('MyClockDisplay').textContent = ctime;
+    	setTimeout(time,1000);
+    }
+    time();
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>

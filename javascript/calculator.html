@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+<style type="text/css">
+	.x{
+		height: 620px;
+		width: 400px;
+		border: 2px solid black;
+		background-color: black;
+		margin: auto;
+	}
+	.clear{
+		height: 90px;
+		width: 400px;
+		margin-top: 10px;
+		background-color: hotpink;
+		text-align: center;
+		color: white;
+	}
+	.num{
+		width: 90px;
+		height: 90px;
+		color: white;
+		background-color: black;
+		margin-top: 10px;
+		border:1px solid white;
+	}
+	.close{
+		width: 90px;
+		height: 70px;
+		color: white;
+		background-color: red;
+		margin-top: 10px;
+	}
+</style>
+</head>
+<body style="background-color:black">
+	<div class="x" id="Calculator">	
+		<textarea style="height: 100px;width: 395px; font-size: 50px;text-align: right;" id="text"></textarea>
+		<button class="clear" onclick="clr()">Clear</button>
+		<button class="num" onclick="ins('1')" >1</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('2')">2</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('3')">3</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('-')">-</button>
+
+		<button class="num" onclick="ins('4')" >4</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('5')">5</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('6')">6</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('+')">+</button>
+
+		<button class="num" onclick="ins('7')" >7</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('8')">8</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('9')">9</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('/')">/</button>
+
+		<button class="num" onclick="ins('0')" >0</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('.')">.</button>
+		<button class="num"  style="margin-left: 8px;" onclick="ins('*')">*</button>
+		<button class="num"  style="margin-left: 8px;" onclick="eluate()">=</button>
+	</div>
+	<center><button class="close" id="clo" onclick="clo()">Close</button></center>
+	<script type="text/javascript">
+		function ins(input){
+			document.getElementById('text').innerHTML += input;
+		}
+		function clr(){
+			document.getElementById("text").innerHTML = "";
+		}
+		function clo(){
+			if(document.getElementById("clo").innerHTML == "Close"){
+				document.getElementById("clo").innerHTML = "Open";
+				document.getElementById("Calculator").style.display = "none";
+			}
+			else{
+				document.getElementById("Calculator").style.display = "block";
+				document.getElementById("clo").innerHTML = "Close";
+			}
+		}
+	function eluate(){
+		var answer;
+		answer=eval(document.getElementById("text").innerHTML);
+		document.getElementById("text").innerHTML=answer;
+	}
+	</script>
+</body>
+</html>

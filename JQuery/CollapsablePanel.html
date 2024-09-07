@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JQuery</title>
+	<style type="text/css">
+		.div{
+			height: 50px;
+			width: 100%;
+			background-color: red;
+			font-size: 45px;
+			color: white;
+		}
+		.child{
+			height: 50px;
+			width: 100%;
+			background-color: lime;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="div">Click to Open</div>
+	<div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	// function toggleMethod(){   //define onclick function in button
+	// 		$('div').toggle(3000);//toggle(time)
+	// 		// $('#btn').html("show");//# is used for id
+	// 	}
+		$('.div').click(function(){
+			$('.child').slideToggle();
+			var data = $('.div').html();
+			if(data == "Click to Open"){
+				$('.div').html("Click to close");
+			}
+			else{
+				$('.div').html("Click to Open");
+			}
+		});
+</script>
+</body>
+</html>

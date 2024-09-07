@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homework</title>
+	<style type="text/css">
+		button{
+			width: 100px;
+		}
+		div{
+			position: absolute;
+			height: 100px;
+			width: 100px;
+			display: none;
+		}
+	</style>
+</head>
+<body >
+	<button id="1" >show</button>
+	<div style=" margin-left: 0px;background-color: orange; " id="div1"></div>
+	<button id="2" >close</button>
+	<div style=" margin-left: 104.5px;background-color: red;display: block; " id="div2"></div>
+	<button id="3" >show</button>
+	<div style=" margin-left: 207.5px;background-color: green; " id="div3"></div>
+	<button id="4" >show</button>
+	<div style=" margin-left: 310.5px;background-color: grey; " id="div4"></div>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$('button').click(function(){
+			var data = $(this).html();
+			$('div').slideUp(500);
+			$('button').html("show");
+			if(data == "show"){
+				$('#div' + this.id).slideDown(500);
+				$(this).html("hide");
+			}
+			else{
+				$(this).html("show");
+			}
+		});
+</script>
+</body>
+</html>

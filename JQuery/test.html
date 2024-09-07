@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <title>Category Manager</title>
+</head>
+<body>
+<?php include 'nav.php'; 
+        session_start();
+        if(isset($_SESSION['msg'])){
+            ?>
+            <script>
+                var msg = "<?=$_SESSION['msg']?>"
+                toastr.success(msg);
+            </script>
+            <?php
+            unset($_SESSION['msg']);
+        }
+        elseif(isset($_SESSION['error'])){
+            ?>
+            <script>
+                var msg = "<?=$_SESSION['error']?>"
+                toastr.error(msg);
+            </script>
+            <?php
+            unset($_SESSION['error']);
+       }
+     ?>
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <form action="add_category.php" method="post" class="border border-warning bg-light p-3 rounded rounded-lg" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" name="category_name" >
+                    </div>
+                    <div class="form-group">
+                        <label for="">Image</label>
+                        <input type="file" class="form-control" name="file">
+                    </div>
+                    <button class="btn btn-success form-control mt-2" name="submit" type="submit" >Add Category</button>
+                </form>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr. No.</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Image</th>
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include 'connection.php';
+                        $var = 1;
+                        $sql = "select * from catrgory";
+                        $query = mysqli_query($con, $sql);
+                        while ($data = mysqli_fetch_assoc($query)) {
+                        ?>
+                            <tr id="row_<?= $var ?>">
+                                <td><?= $var ?></td>
+                                <td class="name"><?= $data['name'] ?></td>
+                                <td class="typ"><?= $data['parent_id'] == 0 ? 'Category' : 'Subcategory' ?></td>
+                                <td class="imge"><a href="category_images/<?= $data['image'] ?>" target="_blank" class="btn btn-primary">view</a></td>
+                                <td id="rw_<?=$var?>">
+                                    <button class="edit btn btn-info" onclick="edit(<?=$var?>,'<?=$data['name']?>','category_images/<?=$data['image']?>')">edit</button>
+                                    <a class="btn btn-danger" href="delete_category.php?delete=<?= base64_encode($data['id']) ?>">delete</a>
+                                </td>
+                            </tr>
+                        <?php
+                        $var++;
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="update_category.php" method="post" class="border border-warning bg-light p-3 rounded rounded-lg" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" name="category_name" id="xx">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Image</label>
+                        <input type="file" class="form-control" name="file" id="yy">
+                    </div>
+                    <button class="btn btn-success form-control mt-2" name="submit" type="submit" id="y">Add Category</button>
+                </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function () {
+        $('.edit').click(function () {
+            var row = $(this).data('row');
+            var name = $(this).data('name');
+            var image = $(this).data('image');
+            
+            $('#edit_category_id').val(row);
+            $('#edit_category_name').val(name);
+            
+            $('#editModal').modal('show');
+        });
+    });
+</script>
+
+</body>
+</html>
